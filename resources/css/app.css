@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans Thin'), local('ClearSans-Thin'), url('/css/fonts/clearsansthin.woff2') format('woff2'), url('/css/fonts/clearsansthin.woff') format('woff'), url('/css/fonts/clearsansthin.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans Light'), local('ClearSans-Light'), url('/css/fonts/clearsanslight.woff2') format('woff2'), url('/css/fonts/clearsanslight.woff') format('woff'), url('/css/fonts/clearsanslight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans'), local('ClearSans'), url('/css/fonts/clearsans.woff2') format('woff2'), url('/css/fonts/clearsans.woff') format('woff'), url('/css/fonts/clearsans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans Italic'), local('ClearSans-Italic'), url('/css/fonts/clearsansitalic.woff2') format('woff2'), url('/css/fonts/clearsansitalic.woff') format('woff'), url('/css/fonts/clearsansitalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans Medium'), local('ClearSans-Medium'), url('/css/fonts/clearsansmedium.woff2') format('woff2'), url('/css/fonts/clearsansmedium.woff') format('woff'), url('/css/fonts/clearsansmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans Medium Italic'), local('ClearSans-MediumItalic'), url('/css/fonts/clearsansmediumitalic.woff2') format('woff2'), url('/css/fonts/clearsansmediumitalic.woff') format('woff'), url('/css/fonts/clearsansmediumitalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans Bold'), local('ClearSans-Bold'), url('/css/fonts/clearsansbold.woff2') format('woff2'), url('/css/fonts/clearsansbold.woff') format('woff'), url('/css/fonts/clearsansbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Clear Sans';
+    src: local('Clear Sans Bold Italic'), local('ClearSans-BoldItalic'), url('/css/fonts/clearsansbolditalic.woff2') format('woff2'), url('/css/fonts/clearsansbolditalic.woff') format('woff'), url('/css/fonts/clearsansbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+:root {
+    --accent-color-light: #34D2AF;
+    --accent-color-regular: #00A480;
+    --accent-color-dark: #006B53;
+    --black: #1F1F1F;
+    --white: #F2F2F2;
+    --gray: #8C8C8C;
+    --gray-light: #F1F1F1;
+}
+
+html, body, #app {
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline:none !important;
+}
+
+*:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+a {
+    color: var(--accent-color-regular);
+    text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+    color: var(--accent-color-light);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: "Clear Sans", Tahoma, sans-serif;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label:before {
+    background: url(../img/icons/checkbox2.svg) no-repeat center center;
+    background-color: var(--accent-color-regular);
+    border: 1px solid var(--accent-color-regular);
+}
+
+input[type="checkbox"] + label:before {
+    margin-right: 10px;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: 1px solid var(--gray);
+}
+
+.btn-primary:disabled {
+    background-color: var(--accent-color-light); 
+}
+
+.btn-primary {
+    background-color: var(--accent-color-regular);
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 35%);
+    border: none;
+    padding: 10px 20px;
+    transition: all 0.1s ease-out;
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color-light);
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+    background-color: var(--accent-color-regular);
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--black);
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 35%);
+    border: none;
+    padding: 10px 20px;
+    transition: all 0.1s ease-out;
+    transform: scale(1);
+}
+
+.btn-secondary:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.btn-secondary:active {
+    transform: scale(0.95);
+    background-color: var(--black);
+    box-shadow: none;
+}
+
+.dropdown-menu {
+    box-shadow: 0 2px 13px rgb(0 0 0 / 15%);
+    border: none;
+    padding:0px;
+    transition: all 0.4s;
+}
+
+.dropdown-menu.on {
+    transform: translateX(10px);
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.6rem 1rem;
+    color: var(--black);
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: var(--accent-color-regular);
+    text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:active, .nav-link:focus {
+    color: var(--accent-color-light);
+}
